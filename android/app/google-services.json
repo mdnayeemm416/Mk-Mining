@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "735578008966",
+    "project_id": "mk-mining",
+    "storage_bucket": "mk-mining.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735578008966:android:3ac3dba1e9818616df1007",
+        "android_client_info": {
+          "package_name": "com.mkminingus.mk_mining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735578008966-kqgcl04h3g8s92tqkqcghv6ci5kk8j93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mkminingus.mk_mining",
+            "certificate_hash": "8d08ad6fdc4070d46b8c18fd877de573d3fc3181"
+          }
+        },
+        {
+          "client_id": "735578008966-car939kn0o6ofll27hh8hmsuanqbdn2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaeZKOcuWCfBT_lE2J4GLkYEYCPz17jOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735578008966-car939kn0o6ofll27hh8hmsuanqbdn2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
