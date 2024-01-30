@@ -1,14 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mk_mining/blocs/balance/balance_bloc.dart';
 import 'package:mk_mining/blocs/refer/refer_bloc.dart';
 import 'package:mk_mining/configs/colors.dart';
 import 'package:mk_mining/configs/sizes.dart';
 import 'package:mk_mining/database/local_db.dart';
-import 'package:mk_mining/views/LeaderBoard/LeaderBoard.dart';
+import 'package:mk_mining/views/Tabbar/tabbar.dart';
+import 'package:mk_mining/views/leaderboard/leader_board.dart';
 import 'package:mk_mining/views/auth/sign_in_scr.dart';
+import 'package:mk_mining/views/home/components/activeminner.dart';
 import 'package:mk_mining/views/home/components/balance.dart';
+import 'package:mk_mining/views/home/components/invitefriends.dart';
+import 'package:mk_mining/views/myWallet/my_wallet.dart';
 import 'package:mk_mining/views/refer/refer_code.dart';
 import 'package:mk_mining/views/refer/refer_list.dart';
 import 'package:mk_mining/views/refer/refer_list_scr.dart';
@@ -111,11 +116,16 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: () {},
           ),
           MenuItem(
+            title: "Go Premium",
+            icon: FontAwesomeIcons.crown,
+            onTap: () {},
+          ),
+          MenuItem(
             title: "LeaderBoard",
             icon: Icons.leaderboard,
             onTap: () {
-              Navigator.push(
-                  context, CupertinoPageRoute(builder: (_) => LeaderBoard()));
+              Navigator.push(context,
+                  CupertinoPageRoute(builder: (_) => const LeaderBoard()));
             },
           ),
           MenuItem(
@@ -131,9 +141,12 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
           MenuItem(
-            title: "Withdraw",
+            title: "My Wallet",
             icon: Icons.attach_money_sharp,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  CupertinoPageRoute(builder: (_) => const MyWallet()));
+            },
           ),
           MenuItem(
             title: "Profile",
@@ -177,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.pushReplacement(
                                   context,
                                   CupertinoPageRoute(
-                                      builder: (_) => const SignInScreen()));
+                                      builder: (_) => const TabbarWidget()));
                             });
                           },
                           child: const Row(
@@ -221,6 +234,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
               const SizedBox(
                 height: AppSizes.bodyPadding,
+              ),
+              //Active Minner
+              const ActiveMinnerWidget(),
+              const SizedBox(
+                height: 10,
+              ),
+              //invitefriends
+              InviteFriendWidget(refercode: referCode),
+              const SizedBox(
+                height: 20,
               ),
 
               //for refers list

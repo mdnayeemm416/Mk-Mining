@@ -38,6 +38,7 @@ class _TabbarWidgetState extends State<TabbarWidget>
                         color: Colors.amber.shade600),
                     controller: tabController,
                     indicatorSize: TabBarIndicatorSize.tab,
+                    tabAlignment: TabAlignment.start,
                     indicatorPadding: const EdgeInsets.all(2),
                     labelColor: Colors.white,
                     unselectedLabelColor: Colors.black,
